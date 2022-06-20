@@ -1,8 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useCallback} from 'react';
-import {addCustomerAction, removeCustomerAction} from './store/reducers/customerReducer';
-import {addCashAction, getCashAction} from './store/reducers/cashReducer';
-import {fetchCustomers} from './store/asyncActions/customer';
+import {addCustomerAction, fetchCustomersAction, removeCustomerAction} from './store/reducers/customerReducer';
+import { asyncAddCashAction, asyncGetCashAction} from './store/reducers/cashReducer';
 
 function App() {
   const dispatch = useDispatch();
@@ -10,11 +9,11 @@ function App() {
   const customers = useSelector((state) => state.customer.list)
 
   const addCash = useCallback((cash) => {
-    dispatch(addCashAction(cash))
+    dispatch(asyncAddCashAction(cash))
   }, [dispatch])
 
   const getCash = useCallback((cash) => {
-    dispatch(getCashAction(cash))
+    dispatch(asyncGetCashAction(cash))
   }, [dispatch])
 
   const addCustomer = useCallback((name) => {
@@ -46,7 +45,7 @@ function App() {
                   onClick={() => addCustomer(prompt('Enter Customer Name'))}>Add Customer
           </button>
           <button className="bg-blue-500 py-1 px-3 rounded"
-                  onClick={() => dispatch(fetchCustomers())}>Fetch Customers
+                  onClick={() => dispatch(fetchCustomersAction())}>Fetch Customers
           </button>
         </div>
 
