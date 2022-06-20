@@ -2,13 +2,6 @@
   "name": "react-redux",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.0.2",
-    "react-scripts": "5.0.1",
-    "redux": "^4.2.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
@@ -30,5 +23,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.3"
   }
 }
